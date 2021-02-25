@@ -1,9 +1,11 @@
 var currentDay = $('#currentDay');
 
-var currentTime = moment().startOf('hour').format('LT');
-var beforeTime = moment().startOf('day').add(0, 'hours');
+var currentTime = moment().startOf('hour')/* .format('LT') */;
+/* var beforeTime = moment().startOf('date').add(0, 'hours'); */
 
-var resetTime = moment().startOf('day').add(0, 'hours');
+/* var resetTime = moment().startOf('day').add(0, 'hours'); */
+
+
 
 //adds timer and counts to the second
 var timeInterval = setInterval(function() {
@@ -14,130 +16,129 @@ var timeInterval = setInterval(function() {
 
 
 var time9 = $('#time9');
-var nineAm = beforeTime.add(9, 'hour').format('LT');
-$('#nineAm').text(nineAm);
+var nineAm = moment().startOf('day').add(9, 'hour');
+$('#nineAm').text(nineAm.format('LT'));
 
 
 var time10 = $('#time10');
-var tenAm = beforeTime.add(1, 'hour').format('LT');
-$('#tenAm').text(tenAm);
+var tenAm = moment().startOf('day').add(10, 'hour');
+$('#tenAm').text(tenAm.format('LT'));
 
 
 var time11 = $('#time11');
-var elevenAm = beforeTime.add(1, 'hour').format('LT');
-$('#elevenAm').text(elevenAm);
+var elevenAm = moment().startOf('day').add(11, 'hour');
+$('#elevenAm').text(elevenAm.format('LT'));
 
 
 var time12 = $('#time12');
-var twelvePm = beforeTime.add(1, 'hour').format('LT');
-$('#twelvePm').text(twelvePm);
+var twelvePm = moment().startOf('day').add(12, 'hour');
+$('#twelvePm').text(twelvePm.format('LT'));
 
 
 var time1 = $('#time1');
-var onePm = beforeTime.add(1, 'hour').format('LT');
-$('#onePm').text(onePm);
+var onePm = moment().startOf('day').add(13, 'hour');
+$('#onePm').text(onePm.format('LT'));
 
 
 var time2 = $('#time2');
-var twoPm = beforeTime.add(1, 'hour').format('LT');
-$('#twoPm').text(twoPm);
+var twoPm = moment().startOf('day').add(14, 'hour');
+$('#twoPm').text(twoPm.format('LT'));
 
 
 var time3 = $('#time3');
-var threePm = beforeTime.add(1, 'hour').format('LT');
-$('#threePm').text(threePm);
+var threePm = moment().startOf('day').add(15, 'hour');
+$('#threePm').text(threePm.format('LT'));
 
 
 var time4 = $('#time4');
-var fourPm = beforeTime.add(1, 'hour').format('LT');
-$('#fourPm').text(fourPm);
+var fourPm = moment().startOf('day').add(16, 'hour');
+$('#fourPm').text(fourPm.format('LT'));
 
 
 var time5 = $('#time5');
-var fivePm = beforeTime.add(1, 'hour').format('LT');
-$('#fivePm').text(fivePm);
+var fivePm = moment().startOf('day').add(17, 'hour');
+$('#fivePm').text(fivePm.format('LT'));
 
-var midnight = resetTime.add(24, 'hour').format('LT');
-console.log(midnight);
+/* var midnight = resetTime.add(24, 'hour').format('LT');
+console.log(midnight); */
 
 function timeBetween() {
    
     // 9 am
-    if (nineAm === currentTime) {
+    if (currentTime.isSame(nineAm, 'hour')) {
         time9.addClass('present');
-    } else if (nineAm < currentTime) {
+    } else if (nineAm.isBefore(currentTime, 'hour')) {
         time9.addClass('past');
     } else {
         time9.addClass('future');
     };
 
     // 10 am
-    if (tenAm === currentTime) {
+    if (currentTime.isSame(tenAm, 'hour')) {
         time10.addClass('present');
-    } else if (tenAm < currentTime) {
+    } else if (tenAm.isBefore(currentTime, 'hour')) {
         time10.addClass('past');
     } else {
         time10.addClass('future');
     };
-
     // 11 am
-    if (elevenAm === currentTime) {
+    if (currentTime.isSame(elevenAm, 'hour')) {
         time11.addClass('present');
-    } else if (elevenAm < currentTime) {
+    } else if (elevenAm.isBefore(currentTime, 'hour')) {
         time11.addClass('past');
     } else {
         time11.addClass('future');
     };
 
     // 12 pm
-    if (twelvePm === currentTime) {
+    if (currentTime.isSame(twelvePm, 'hour')) {
         time12.addClass('present');
-    } else if (twelvePm < currentTime) {
+    } else if (currentTime.isAfter(twelvePm, 'hour')) {
         time12.addClass('past');
     } else {
         time12.addClass('future');
     };
 
     // 1 pm
-    if (onePm === currentTime) {
+    if (currentTime.isSame(onePm, 'hour')) {
         time1.addClass('present');
-    } else if (onePm < currentTime) {
+    } else if (onePm.isBefore(currentTime, 'hour')) {
         time1.addClass('past');
     } else {
         time1.addClass('future');
     };
 
     // 2 pm
-    if (twoPm === currentTime) {
+    if (currentTime.isSame(twoPm, 'hour')) {
         time2.addClass('present');
-    } else if (twoPm < currentTime) {
+    } else if (twoPm.isBefore(currentTime, 'hour')) {
         time2.addClass('past');
     } else {
         time2.addClass('future');
     };
 
     // 3 pm
-    if (threePm === currentTime) {
+    if (currentTime.isSame(threePm, 'hour')) {
         time3.addClass('present');
-    } else if (threePm < currentTime) {
+    } else if (threePm.isBefore(currentTime, 'hour')) {
         time3.addClass('past');
     } else {
         time3.addClass('future');
     };
 
     // 4 pm
-    if (fourPm === currentTime) {
+    if (currentTime.isSame(fourPm, 'hour')) {
         time4.addClass('present');
-    } else if (fourPm < currentTime) {
+    } else if (fourPm.isBefore(currentTime, 'hour')) {
         time4.addClass('past');
     } else {
         time4.addClass('future');
     };
 
     // 5 pm
-    if (fivePm === currentTime) {
+    if (currentTime.isSame(fivePm, 'hour')) {
         time5.addClass('present');
-    } else if (fivePm < currentTime) {
+    } else if (fivePm.isBefore(currentTime, 'hour')) {
         time5.addClass('past');
     } else {
         time5.addClass('future');
@@ -160,10 +161,10 @@ var input5 = $('#input5');
 
 
 // saves 9am to do
-$('#click9').click(function() {
+$('#click9').click(function(e) {
     input9 = $('#input9').val();
     console.log(input9);
-    localStorage.setItem.JSON.Stringify("inputVal9", input9);
+    localStorage.setItem("inputVal9", input9);
 });
 
 // saves 10am to do
