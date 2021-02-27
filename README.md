@@ -1,6 +1,6 @@
 # day-planner
 
-This application was created to allow a user to schedule out there work day.
+This application was created to allow a user to schedule out their work day.
 
 ![screenshot](Assets/images/applicationScreenshot.png)
 
