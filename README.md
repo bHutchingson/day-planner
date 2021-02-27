@@ -7,6 +7,6 @@ This application features local storage to save information locally to the users
 Deployed Application:
 [a link] (https://bhutchingson.github.io/day-planner/)
 
-(assets/images/applicationScreenshot.png)
+![image of working application](./assets/images/applicationScreenshot.png)
 
 
