@@ -59,89 +59,86 @@ var time5 = $('#time5');
 var fivePm = moment().startOf('day').add(17, 'hour');
 $('#fivePm').text(fivePm.format('LT'));
 
-/* var midnight = resetTime.add(24, 'hour').format('LT');
-console.log(midnight); */
-
 function timeBetween() {
    
     // 9 am
     if (currentTime.isSame(nineAm, 'hour')) {
-        time9.addClass('present');
+        input9.addClass('present');
     } else if (nineAm.isBefore(currentTime, 'hour')) {
-        time9.addClass('past');
+        input9.addClass('past');
     } else {
-        time9.addClass('future');
+        input.addClass('future');
     };
 
     // 10 am
     if (currentTime.isSame(tenAm, 'hour')) {
-        time10.addClass('present');
+        input10.addClass('present');
     } else if (tenAm.isBefore(currentTime, 'hour')) {
-        time10.addClass('past');
+        input10.addClass('past');
     } else {
-        time10.addClass('future');
+        input10.addClass('future');
     };
     // 11 am
     if (currentTime.isSame(elevenAm, 'hour')) {
-        time11.addClass('present');
+        input11.addClass('present');
     } else if (elevenAm.isBefore(currentTime, 'hour')) {
-        time11.addClass('past');
+        input11.addClass('past');
     } else {
-        time11.addClass('future');
+        input11.addClass('future');
     };
 
     // 12 pm
     if (currentTime.isSame(twelvePm, 'hour')) {
-        time12.addClass('present');
+        input12.addClass('present');
     } else if (currentTime.isAfter(twelvePm, 'hour')) {
-        time12.addClass('past');
+        input12.addClass('past');
     } else {
-        time12.addClass('future');
+        input12.addClass('future');
     };
 
     // 1 pm
     if (currentTime.isSame(onePm, 'hour')) {
-        time1.addClass('present');
+        input1.addClass('present');
     } else if (onePm.isBefore(currentTime, 'hour')) {
-        time1.addClass('past');
+        input1.addClass('past');
     } else {
-        time1.addClass('future');
+        input1.addClass('future');
     };
 
     // 2 pm
     if (currentTime.isSame(twoPm, 'hour')) {
-        time2.addClass('present');
+        input2.addClass('present');
     } else if (twoPm.isBefore(currentTime, 'hour')) {
-        time2.addClass('past');
+        input2.addClass('past');
     } else {
-        time2.addClass('future');
+        input2.addClass('future');
     };
 
     // 3 pm
     if (currentTime.isSame(threePm, 'hour')) {
-        time3.addClass('present');
+        input3.addClass('present');
     } else if (threePm.isBefore(currentTime, 'hour')) {
-        time3.addClass('past');
+        input3.addClass('past');
     } else {
-        time3.addClass('future');
+        input3.addClass('future');
     };
 
     // 4 pm
     if (currentTime.isSame(fourPm, 'hour')) {
-        time4.addClass('present');
+        input4.addClass('present');
     } else if (fourPm.isBefore(currentTime, 'hour')) {
-        time4.addClass('past');
+        input4.addClass('past');
     } else {
-        time4.addClass('future');
+        input4.addClass('future');
     };
 
     // 5 pm
     if (currentTime.isSame(fivePm, 'hour')) {
-        time5.addClass('present');
+        input5.addClass('present');
     } else if (fivePm.isBefore(currentTime, 'hour')) {
-        time5.addClass('past');
+        input5.addClass('past');
     } else {
-        time5.addClass('future');
+        input5.addClass('future');
     };
 
     //reset at midnight
@@ -161,65 +158,56 @@ var input5 = $('#input5');
 
 
 // saves 9am to do
-$('#click9').click(function(e) {
+$('#click9').click(function() {
     input9 = $('#input9').val();
-    console.log(input9);
     localStorage.setItem("inputVal9", input9);
 });
 
 // saves 10am to do
 $('#click10').click(function() {
     input10 = $('#input10').val();
-    console.log(input10);
     localStorage.setItem("inputVal10", input10);
 });
 
 // saves 11am to do
 $('#click11').click(function() {
     input11 = $('#input11').val();
-    console.log(input11);
     localStorage.setItem("inputVal11", input11);
 });
 
 // saves 12am to do
 $('#click12').click(function() {
     input12 = $('#input12').val();
-    console.log(input12);
     localStorage.setItem("inputVal12", input12);
 });
 
 // saves 1am to do
 $('#click1').click(function() {
     input1 = $('#input1').val();
-    console.log(input1);
     localStorage.setItem("inputVal1", input1);
 });
 
 // saves 2am to do
 $('#click2').click(function() {
     input2 = $('#input2').val();
-    console.log(input2);
     localStorage.setItem("inputVal2", input2);
 });
 
 // saves 3am to do
 $('#click3').click(function() {
     input3 = $('#input3').val();
-    console.log(input3);
     localStorage.setItem("inputVal3", input3);
 });
 
 // saves 4am to do
 $('#click4').click(function() {
     input4 = $('#input4').val();
-    console.log(input4);
     localStorage.setItem("inputVal4", input4);
 });
 
 // saves 5am to do
 $('#click5').click(function() {
     input5 = $('#input5').val();
-    console.log(input5);
     localStorage.setItem("inputVal5", input5);
 });
 
